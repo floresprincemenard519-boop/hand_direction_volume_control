@@ -46,9 +46,9 @@ while True:
         # elif hand_direction == "down":
         #     pyautogui.press("volumedown")
 
-        if tip_index.y < tip_thumb.y:
+        if tip_index < tip_thumb:
             pyautogui.press("volumeup")
-        elif tip_thumb.y < tip_index.y:
+        elif tip_thumb < tip_index:
             pyautogui.press("volumedown")
 
         # to show the frame so that the hand tracking is shown.
@@ -61,4 +61,4 @@ while True:
 capture.release()
 cv2.destroyAllWindows()
 # errorrrr about the mediapipe solved 
-# another error about .y no attribute
+# another error about .y no attribute P.S. Solved i removed the .y it isnt needed.
