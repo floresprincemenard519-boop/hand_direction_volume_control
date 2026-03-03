@@ -26,5 +26,9 @@ while True:
     if results.multi_hand_landmarks:
         for hand_landmarks in results.multi_hand_landmarks:
             mp_drawing.draw_landmarks(frame, hand_landmarks, mp_hands.HAND_CONNECTIONS)
-            
 
+        # This will be the code for what controls the volume and in this code i'll use the index to control and the thumb as the base.
+        # but first we have to identify the landmarks of my index and tumb.
+        tip_index = hand_landmarks.landmark[mp_hands.HandLandmark.INDEX_FINGER_TIP]
+        tip_thumb = hand_landmarks.landmark[mp_hands.HandLandmark.THUMB_TIP]
+        
