@@ -33,16 +33,21 @@ while True:
         tip_thumb = hand_landmarks.landmark[mp_hands.HandLandmark.THUMB_TIP].y
 
         # the step is to make the logic (what does these landmarks mean)
-        if tip_index.y < tip_thumb.y:
-            hand_direction = "up"
-        elif tip_thumb.y < tip_index.y:
-            hand_direction = "down"
-        else:
-            hand_direction = "else"
+        # if tip_index.y < tip_thumb.y:
+        #     hand_direction = "up"
+        # elif tip_thumb.y < tip_index.y:
+        #     hand_direction = "down"
+        # else:
+        #     hand_direction = "else"
  
-        # next thing to do is to now attach commands to the direction of my finger.
-        if hand_direction == "up":
+        # # next thing to do is to now attach commands to the direction of my finger.
+        # if hand_direction == "up":
+        #     pyautogui.press("volumeup")
+        # elif hand_direction == "down":
+        #     pyautogui.press("volumedown")
+
+        if tip_index.y < tip_thumb.y:
             pyautogui.press("volumeup")
-        elif hand_direction == "down":
+        elif tip_thumb.y < tip_index.y:
             pyautogui.press("volumedown")
         
