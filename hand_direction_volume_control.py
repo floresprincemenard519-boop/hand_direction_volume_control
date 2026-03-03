@@ -15,3 +15,6 @@ while True:
     ret, frame = capture.read()
     if not ret:
         break
+
+    # convert each frame to RGB because mediapipe needs and only works with rgb frames.
+    frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
