@@ -61,3 +61,4 @@ while True:
 capture.release()
 cv2.destroyAllWindows()
 # errorrrr about the mediapipe solved 
+# another error about .y no attribute
