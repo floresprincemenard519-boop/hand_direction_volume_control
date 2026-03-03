@@ -60,4 +60,4 @@ while True:
 
 capture.release()
 cv2.destroyAllWindows()
-# errorrrr
+# errorrrr about the mediapipe solved 
