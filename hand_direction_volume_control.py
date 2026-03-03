@@ -39,5 +39,10 @@ while True:
             hand_direction = "down"
         else:
             hand_direction = "else"
-
+ 
+        # next thing to do is to now attach commands to the direction of my finger.
+        if hand_direction == "up":
+            pyautogui.press("volumeup")
+        elif hand_direction == "down":
+            pyautogui.press("volumedown")
         
