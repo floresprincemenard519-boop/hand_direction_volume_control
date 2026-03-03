@@ -50,4 +50,13 @@ while True:
             pyautogui.press("volumeup")
         elif tip_thumb.y < tip_index.y:
             pyautogui.press("volumedown")
-        
+
+        # to show the frame so that the hand tracking is shown.
+        cv2.imshow("Hand Tracking", frame)
+
+        # this is for exiting the loop and add clean up code
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+
+capture.release()
+cv2.destroyAllWindows()
