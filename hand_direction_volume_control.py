@@ -52,11 +52,11 @@ while True:
             pyautogui.press("volumedown")
 
         # to show the frame so that the hand tracking is shown.
-        cv2.imshow("Hand Tracking", frame)
+    cv2.imshow("Hand Tracking", frame)
 
-        # this is for exiting the loop and add clean up code
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
+    # this is for exiting the loop and add clean up code
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
 
 capture.release()
 cv2.destroyAllWindows()
