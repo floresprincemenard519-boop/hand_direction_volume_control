@@ -21,3 +21,10 @@ while True:
 
     # finally process the frame using mediapipe
     results = hands.process(frame_rgb)
+
+    # if there is a hand detected we can use the landmarks in the hand to control the volume of the computer.
+    if results.multi_hand_landmarks:
+        for hand_landmarks in results.multi_hand_landmarks:
+            mp_drawing.draw_landmarks(frame, hand_landmarks, mp_hands.HAND_CONNECTIONS)
+            
+
