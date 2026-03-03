@@ -18,3 +18,6 @@ while True:
 
     # convert each frame to RGB because mediapipe needs and only works with rgb frames.
     frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+
+    # finally process the frame using mediapipe
+    results = hands.process(frame_rgb)
