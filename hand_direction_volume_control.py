@@ -29,6 +29,15 @@ while True:
 
         # This will be the code for what controls the volume and in this code i'll use the index to control and the thumb as the base.
         # but first we have to identify the landmarks of my index and tumb.
-        tip_index = hand_landmarks.landmark[mp_hands.HandLandmark.INDEX_FINGER_TIP]
-        tip_thumb = hand_landmarks.landmark[mp_hands.HandLandmark.THUMB_TIP]
+        tip_index = hand_landmarks.landmark[mp_hands.HandLandmark.INDEX_FINGER_TIP].y
+        tip_thumb = hand_landmarks.landmark[mp_hands.HandLandmark.THUMB_TIP].y
+
+        # the step is to make the logic (what does these landmarks mean)
+        if tip_index.y < tip_thumb.y:
+            hand_direction = "up"
+        elif tip_thumb.y < tip_index.y:
+            hand_direction = "down"
+        else:
+            hand_direction = "else"
+
         
